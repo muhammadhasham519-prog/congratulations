@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Congratulations Mr. Rayan Emerald Green</title>
+
+<style>
+
+/* =========================================
+   BASIC SETTINGS
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+    color: white;
+
+    background:
+        radial-gradient(circle at 20% 20%, #008cff, transparent 30%),
+        radial-gradient(circle at 80% 80%, #0044aa, transparent 35%),
+        linear-gradient(135deg, #001638, #004a9e, #009dff);
+}
+
+
+/* =========================================
+   INTRO SCREEN
+========================================= */
+
+#intro {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        radial-gradient(circle at center,
+        #008cff 0%,
+        #0052a8 35%,
+        #001538 100%);
+
+    z-index: 1000;
+
+    transition:
+        opacity 1s ease,
+        visibility 1s ease;
+}
+
+#intro.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+/* =========================================
+   PARTY POPPER AREA
+========================================= */
+
+.popper-container {
+    width: 260px;
+    height: 260px;
+
+    position: relative;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease;
+}
+
+.popper-container:hover {
+    transform: scale(1.08);
+}
+
+.popper-container:active {
+    transform: scale(0.95);
+}
+
+
+/* =========================================
+   PARTY POPPER
+========================================= */
+
+.party-popper {
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+
+    animation:
+        popperShake 0.7s infinite alternate;
+}
+
+
+/* Main body */
+
+.popper-body {
+    position: absolute;
+
+    width: 120px;
+    height: 155px;
+
+    left: 65px;
+    top: 75px;
+
+    border-radius:
+        18px
+        18px
+        50px
+        50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #00d9ff,
+            #0066ff
+        );
+
+    transform: rotate(-27deg);
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,0.45);
+}
+
+
+/* Opening */
+
+.popper-body::before {
+    content: "";
+
+    position: absolute;
+
+    width: 78px;
+    height: 78px;
+
+    top: -40px;
+    left: 20px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    border:
+        9px solid #008cff;
+
+    box-shadow:
+        0 0 25px
+        rgba(255,255,255,0.7);
+}
+
+
+/* Handle */
+
+.popper-tip {
+    position: absolute;
+
+    width: 25px;
+    height: 90px;
+
+    left: 150px;
+    top: 20px;
+
+    background: white;
+
+    border-radius: 15px;
+
+    transform: rotate(25deg);
+}
+
+
+/* =========================================
+   CLICK TEXT
+========================================= */
+
+.click-text {
+    position: absolute;
+
+    bottom: 15px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    width: 100%;
+
+    text-align: center;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    color: white;
+
+    animation:
+        pulse 1s infinite alternate;
+}
+
+
+/* =========================================
+   POPPER CONFETTI
+========================================= */
+
+.popper-confetti {
+    position: absolute;
+
+    width: 14px;
+    height: 27px;
+
+    left: 120px;
+    top: 70px;
+
+    opacity: 0;
+
+    z-index: 10;
+}
+
+
+/* Different pieces */
+
+.pc1 {
+    background: #00ffff;
+}
+
+.pc2 {
+    background: #ffffff;
+}
+
+.pc3 {
+    background: #55ff99;
+}
+
+.pc4 {
+    background: #ffe34d;
+}
+
+.pc5 {
+    background: #ff66cc;
+}
+
+.pc6 {
+    background: #ff884d;
+}
+
+.pc7 {
+    background: #a875ff;
+}
+
+.pc8 {
+    background: #00ffcc;
+}
+
+
+/* =========================================
+   POPPER EXPLOSION
+========================================= */
+
+.party-popper.explode .popper-confetti {
+    animation:
+        explode 1.5s forwards;
+}
+
+.party-popper.explode .pc1 {
+    --x: -2;
+    --y: -1.2;
+}
+
+.party-popper.explode .pc2 {
+    --x: -1.3;
+    --y: -1.8;
+}
+
+.party-popper.explode .pc3 {
+    --x: -0.7;
+    --y: -2;
+}
+
+.party-popper.explode .pc4 {
+    --x: 0.1;
+    --y: -2.2;
+}
+
+.party-popper.explode .pc5 {
+    --x: 0.8;
+    --y: -2;
+}
+
+.party-popper.explode .pc6 {
+    --x: 1.4;
+    --y: -1.6;
+}
+
+.party-popper.explode .pc7 {
+    --x: 2;
+    --y: -1;
+}
+
+.party-popper.explode .pc8 {
+    --x: 1.2;
+    --y: -2.3;
+}
+
+
+/* =========================================
+   MAIN PAGE
+========================================= */
+
+#main {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+
+    opacity: 0;
+
+    transform:
+        scale(0.7)
+        translateY(30px);
+
+    transition:
+        opacity 1.3s ease,
+        transform 1.3s ease;
+}
+
+#main.show {
+    opacity: 1;
+
+    transform:
+        scale(1)
+        translateY(0);
+}
+
+
+/* =========================================
+   MAIN CARD
+========================================= */
+
+.card {
+    width: min(950px, 96%);
+
+    max-height: 92vh;
+
+    overflow-y: auto;
+
+    padding:
+        55px
+        45px;
+
+    text-align: center;
+
+    position: relative;
+
+    border-radius: 32px;
+
+    background:
+        rgba(255,255,255,0.13);
+
+    border:
+        2px solid
+        rgba(255,255,255,0.35);
+
+    backdrop-filter:
+        blur(18px);
+
+    box-shadow:
+        0 30px 80px
+        rgba(0,0,0,0.45),
+
+        inset
+        0 0 40px
+        rgba(255,255,255,0.08);
+}
+
+
+/* Decorative circles */
+
+.card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 330px;
+    height: 330px;
+
+    left: -150px;
+    top: -180px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(0,220,255,0.25);
+
+    filter: blur(10px);
+}
+
+.card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 330px;
+    height: 330px;
+
+    right: -150px;
+    bottom: -180px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(0,100,255,0.3);
+
+    filter: blur(10px);
+}
+
+
+/* =========================================
+   TROPHY
+========================================= */
+
+.trophy {
+    position: relative;
+
+    z-index: 2;
+
+    font-size: 80px;
+
+    animation:
+        trophyFloat 2s ease-in-out infinite;
+}
+
+
+/* =========================================
+   SMALL TITLE
+========================================= */
+
+.small-title {
+    position: relative;
+
+    z-index: 2;
+
+    margin-top: 8px;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    letter-spacing: 5px;
+
+    text-transform: uppercase;
+
+    color: #dff9ff;
+}
+
+
+/* =========================================
+   BIG CONGRATULATIONS
+========================================= */
+
+h1 {
+    position: relative;
+
+    z-index: 2;
+
+    margin:
+        15px
+        0;
+
+    font-size:
+        clamp(45px, 8vw, 88px);
+
+    line-height: 1;
+
+    font-weight: 900;
+
+    text-transform: uppercase;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #8eeaff,
+            #ffffff
+        );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* =========================================
+   NAME
+========================================= */
+
+.name {
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 25px;
+
+    font-size:
+        clamp(28px, 5vw, 55px);
+
+    font-weight: 800;
+
+    color: white;
+}
+
+
+/* =========================================
+   MAIN MESSAGE
+========================================= */
+
+.message {
+    position: relative;
+
+    z-index: 2;
+
+    font-size:
+        clamp(20px, 3vw, 30px);
+
+    line-height: 1.55;
+
+    color: #f2fbff;
+}
+
+.message strong {
+    color: white;
+}
+
+
+/* =========================================
+   WHOLE CLASS MESSAGE
+========================================= */
+
+.from-class {
+    position: relative;
+
+    z-index: 2;
+
+    margin-top: 27px;
+
+    padding: 24px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(0,20,70,0.28);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.25);
+
+    font-size:
+        clamp(18px, 2.8vw, 27px);
+
+    line-height: 1.55;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0,0,0,0.18);
+}
+
+.highlight {
+    color: #b6f4ff;
+
+    font-weight: 900;
+}
+
+.hasham {
+    color: white;
+
+    font-weight: 900;
+}
+
+
+/* =========================================
+   CR BADGE
+========================================= */
+
+.cr-badge {
+    position: relative;
+
+    z-index: 2;
+
+    display: inline-block;
+
+    margin-top: 30px;
+
+    padding:
+        15px
+        35px;
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            90deg,
+            white,
+            #b8f4ff
+        );
+
+    color: #0051a8;
+
+    font-size: 21px;
+
+    font-weight: 900;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0,0,0,0.3);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+    position: relative;
+
+    z-index: 2;
+
+    margin-top: 27px;
+
+    font-size: 17px;
+
+    line-height: 1.6;
+
+    color: #d9f7ff;
+}
+
+
+/* =========================================
+   FALLING CONFETTI
+========================================= */
+
+.falling-confetti {
+    position: fixed;
+
+    top: -40px;
+
+    z-index: 500;
+
+    pointer-events: none;
+
+    animation:
+        fall linear infinite;
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes popperShake {
+
+    0% {
+        transform: rotate(-5deg);
+    }
+
+    100% {
+        transform: rotate(5deg);
+    }
+}
+
+
+@keyframes explode {
+
+    0% {
+        opacity: 1;
+
+        transform:
+            translate(0,0)
+            rotate(0deg)
+            scale(1);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translate(
+                calc(var(--x) * 100px),
+                calc(var(--y) * 100px)
+            )
+            rotate(720deg)
+            scale(0.7);
+    }
+}
+
+
+@keyframes pulse {
+
+    0% {
+        opacity: 0.45;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+@keyframes trophyFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-13px);
+    }
+}
+
+
+@keyframes fall {
+
+    0% {
+        transform:
+            translateY(-40px)
+            rotate(0deg);
+
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+
+        opacity: 0.7;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .popper-container {
+        transform: scale(0.85);
+    }
+
+    .popper-container:hover {
+        transform: scale(0.9);
+    }
+
+    .intro-text {
+        font-size: 15px;
+        letter-spacing: 2px;
+    }
+
+    .card {
+        width: 100%;
+
+        padding:
+            38px
+            18px;
+    }
+
+    .trophy {
+        font-size: 58px;
+    }
+
+    .small-title {
+        font-size: 12px;
+        letter-spacing: 3px;
+    }
+
+    .cr-badge {
+        font-size: 16px;
+
+        padding:
+            12px
+            22px;
+    }
+
+    .footer {
+        font-size: 14px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     FIRST SCREEN
+========================================= -->
+
+<section id="intro">
+
+
+    <!-- CLICKABLE PARTY POPPER -->
+
+    <div
+        class="popper-container"
+        id="popperButton"
+    >
+
+        <div
+            class="party-popper"
+            id="partyPopper"
+        >
+
+
+            <!-- Popper body -->
+
+            <div class="popper-body"></div>
+
+
+            <!-- Popper handle -->
+
+            <div class="popper-tip"></div>
+
+
+            <!-- Explosion confetti -->
+
+            <div class="popper-confetti pc1"></div>
+            <div class="popper-confetti pc2"></div>
+            <div class="popper-confetti pc3"></div>
+            <div class="popper-confetti pc4"></div>
+            <div class="popper-confetti pc5"></div>
+            <div class="popper-confetti pc6"></div>
+            <div class="popper-confetti pc7"></div>
+            <div class="popper-confetti pc8"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Click instruction -->
+
+    <div class="click-text">
+        🎉 CLICK THE PARTY POPPER 🎉
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================
+     MAIN CONGRATULATIONS PAGE
+========================================= -->
+
+<main id="main">
+
+    <div class="card">
+
+
+        <!-- Trophy -->
+
+        <div class="trophy">
+            🏆
+        </div>
+
+
+        <!-- Small heading -->
+
+        <div class="small-title">
+            A Very Special Announcement
+        </div>
+
+
+        <!-- Big heading -->
+
+        <h1>
+            Congratulations!
+        </h1>
+
+
+        <!-- Name -->
+
+        <div class="name">
+            Mr. Rayan Emerald Green
+        </div>
+
+
+        <!-- Main congratulations -->
+
+        <div class="message">
+
+            Congratulations,
+            <strong>
+                Mr. Rayan Emerald Green
+            </strong>,
+
+            for becoming the
+
+            <strong>
+                CR of the Class!
+            </strong>
+
+        </div>
+
+
+        <!-- Whole class message -->
+
+        <div class="from-class">
+
+            🎉
+
+            <span class="highlight">
+                Congratulations, Mr. Rayan Emerald Green,
+            </span>
+
+            for becoming the
+
+            <strong>
+                CR of the class!
+            </strong>
+
+            <br><br>
+
+            This special congratulations is
+
+            <strong>
+                from the whole class
+            </strong>
+
+            and especially from
+
+            <span class="hasham">
+                Mr. Hasham!
+            </span>
+
+            ❤️
+
+        </div>
+
+
+        <!-- CR badge -->
+
+        <div class="cr-badge">
+
+            🎓 CLASS REPRESENTATIVE 🎓
+
+        </div>
+
+
+        <!-- Closing message -->
+
+        <div class="footer">
+
+            Wishing you great success in your new
+            responsibility!
+
+            <br>
+
+            Lead the class with confidence,
+            responsibility, and a positive attitude. 🌟
+
+            <br><br>
+
+            Once again, congratulations on this
+            wonderful achievement! 🎊
+
+        </div>
+
+
+    </div>
+
+</main>
+
+
+
+<script>
+
+/* =========================================
+   GET ELEMENTS
+========================================= */
+
+const popperButton =
+    document.getElementById("popperButton");
+
+const partyPopper =
+    document.getElementById("partyPopper");
+
+const intro =
+    document.getElementById("intro");
+
+const main =
+    document.getElementById("main");
+
+
+/* =========================================
+   CLICK PARTY POPPER
+========================================= */
+
+popperButton.addEventListener(
+    "click",
+    function() {
+
+
+        /*
+        Prevent clicking multiple times
+        */
+
+        if (
+            partyPopper.classList.contains("explode")
+        ) {
+            return;
+        }
+
+
+        /*
+        Start popper explosion
+        */
+
+        partyPopper.classList.add("explode");
+
+
+        /*
+        Hide click instruction
+        */
+
+        document.querySelector(
+            ".click-text"
+        ).style.opacity = "0";
+
+
+        /*
+        Wait for explosion,
+        then reveal congratulations.
+        */
+
+        setTimeout(function() {
+
+            intro.classList.add("hide");
+
+            main.classList.add("show");
+
+            createConfetti();
+
+        }, 1700);
+
+    }
+);
+
+
+
+/* =========================================
+   CREATE FALLING CONFETTI
+========================================= */
+
+function createConfetti() {
+
+
+    const colors = [
+
+        "#ffffff",
+        "#00ffff",
+        "#55ff99",
+        "#ffe34d",
+        "#ff66cc",
+        "#66aaff",
+        "#ff884d",
+        "#a875ff"
+
+    ];
+
+
+    /*
+    Create 100 confetti pieces
+    */
+
+    for (
+        let i = 0;
+        i < 100;
+        i++
+    ) {
+
+
+        const piece =
+            document.createElement("div");
+
+
+        piece.className =
+            "falling-confetti";
+
+
+        /*
+        Random position
+        */
+
+        piece.style.left =
+            Math.random() * 100 + "vw";
+
+
+        /*
+        Random color
+        */
+
+        piece.style.background =
+            colors[
+                Math.floor(
+                    Math.random() *
+                    colors.length
+                )
+            ];
+
+
+        /*
+        Random size
+        */
+
+        piece.style.width =
+            (6 + Math.random() * 8) + "px";
+
+
+        piece.style.height =
+            (10 + Math.random() * 16) + "px";
+
+
+        /*
+        Random falling speed
+        */
+
+        piece.style.animationDuration =
+            (3 + Math.random() * 5) + "s";
+
+
+        /*
+        Random delay
+        */
+
+        piece.style.animationDelay =
+            Math.random() * 3 + "s";
+
+
+        /*
+        Add to page
+        */
+
+        document.body.appendChild(piece);
+
+    }
+
+}
+
+</script>
+
+
+</body>
+</html>
